@@ -1,0 +1,11 @@
+Bridge homematic:bridge:ccubs "CCU Braunschweig Bridge" @ "Braunschweig" [ gatewayAddress="192.168.35.176", callbackHost="192.168.34.46", xmlCallbackPort=10125, binCallbackPort=10126 ]
+{
+    Thing HG-HM-CC-RT-DN            NEQ1227308   "B Heizung links" @ "BS Wohnzimmer"
+    Thing HG-HM-CC-RT-DN            NEQ1227342   "B Heizung rechts" @ "BS Wohnzimmer"
+    Thing HG-HM-CC-RT-DN            MEQ1884252   "B Heizung Schlafzimmer" @ "BS Schlafzimmer"
+    Thing HG-HM-CC-RT-DN            NEQ1226688   "B Heizung Kueche" @ "BS Küche"
+    Thing HG-HM-CC-RT-DN            MEQ1884307   "B Heizung Bad" @ "BS Bad"
+    Thing HG-HM-Sec-SCo             MEQ0717196   "B Heizung Fenster" @ "BS Schlafzimmer"
+	Thing GATEWAY-EXTRAS-CCU        GWE00000000
+}
+

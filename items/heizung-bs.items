@@ -1,0 +1,33 @@
+Group BS "Wohnung Braunschweig" <house>
+Group SZ "Schlafzimmer" <bedroom> (BS)
+
+Group                     Heating_Group          "Heizung Gesamt"                               <heating>         (BS)
+Group                     Heating_WZ             "Heizung Wohnzimmer"                           <heating>         (Heating_Group)
+Group                     Heating_FK             "Heizung Flur/Küche"                           <heating>         (Heating_Group)
+Group                     Heating_SZ             "Heizung Schlafzimmer"                         <heating>         (Heating_Group)
+Group                     Heating_BD             "Heizung Bad"                                  <heating>         (Heating_Group)
+Group:Number:AVG          Heating_TargetTemps    "Raumtemperaturen Soll [%.1f °C]"              <temperature>     (Heating_Group)
+Group:Switch:OR(ON, OFF)  Heating_ValveSettings  "Aktive Heizkörper [%d]"                       <heating>         (Heating_Group)
+Group                     Heating_OpModes        "Raumtemperaturen Mode [%.1f °C]"              <"heating-off">   (Heating_Group)
+Group:Number:AVG          Heating_TargetPresets  "Raumtemperaturen Soll Zeitprogramm [%.1f °C]" <line>            (Heating_Group)
+Group:NUMBER:SUM          Heating_WindowModes    "Fensterabsenkung"                             <window>          (Heating_Group)
+
+// HM-CC-RT-DN Heizkörperthermostat                                                                                                                              
+Number SZ_Heizung_RSSI              "SZ_Heizung RSSI [%d dBm]"                                  <"signal-3">      (Heating_SZ,RSSI_Group)               {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:0#RSSI_DEVICE"}
+Switch SZ_Heizung_Unreach           "SZ_Heizung unreachable"                                    <siren>           (Heating_SZ,Unreach_Group)            {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:0#UNREACH"}
+Switch SZ_Heizung_Pending           "SZ_Heizung config pending"                                 <siren>           (Heating_SZ,Pending_Group)            {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:0#CONFIG_PENDING"}
+Number SZ_Heizung_Battery           "SZ_Heizung Batteriezustand [%.1f V]"                       <"battery-100">   (Heating_SZ,Bat_Volts)                {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#BATTERY_STATE"}
+String SZ_Heizung_Fault             "SZ_Heizung Fehlerwert [MAP(HM-CC-RT-DN.map):%s]"           <error2>          (Heating_SZ,Error_Group)              {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#FAULT_REPORTING"}
+Number SZ_Heizung_ActTemp           "SZ_Heizung Ist-Temperatur [%.1f°C]"                       <temperature>     (Heating_SZ,SZ,Temperatures)          {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#ACTUAL_TEMPERATURE"}
+Number SZ_Heizung_SetTemp           "SZ_Heizung Soll-Temperatur [%.1f°C]"                      <temperature>     (Heating_SZ,SZ,Heating_TargetTemps)   {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#SET_TEMPERATURE"}
+Number SZ_Heizung_Valve             "SZ_Heizung Ventilstellung [%d %%]"                         <heating>         (Heating_SZ,SZ,Heating_ValveSettings) {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#VALVE_STATE"}
+String SZ_Heizung_Mode              "SZ_Heizung Betriebsart [MAP(HM-CC-RT-DN.map):%s]"          <"heating-off">   (Heating_SZ,SZ,Heating_OpModes)       {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#CONTROL_MODE"}
+Switch SZ_Heizung_Auto              "SZ_Heizung Auto-Mode"                                      <temperature>     (Heating_SZ)                          {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#AUTO_MODE"}
+Number SZ_Heizung_Manu              "SZ_Heizung Manu-Mode [%.1f°C]"                            <"heating-40">    (Heating_SZ)                          {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#MANU_MODE"}
+Switch SZ_Heizung_BoostMode         "SZ_Heizung Boost-Mode"                                     <fire>            (Heating_SZ)                          {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#BOOST_MODE"}
+Number SZ_Heizung_BoostTime         "SZ_Heizung Boost-Restdauer [%d min]"                       <"clock-on">      (Heating_SZ)                          {channel="homematic:HG-HM-CC-RT-DN:ccubs:MEQ1884252:4#BOOST_STATE"}
+Switch SZ_Heizung_WindowMode        "SZ_Heizung Fensterabsenkung"                               <window>          (Heating_SZ,SZ,Heating_WindowModes)
+Number SZ_Heizung_Preset            "SZ_Heizung Soll-Temperatur Schnellauswahl"                 <"heating-60">    (Heating_SZ)
+Number SZ_Heizung_PresetTemp        "SZ_Heizung Soll-Temperatur Zeitprogramm [%.1f°C]"         <line>            (Heating_SZ,Heating_TargetPresets)
+String SZ_Heizung_Summary           "SZ_Heizung Uebersicht [%s]"                                 <thermometer_red> (Heating_SZ,SZ)
+

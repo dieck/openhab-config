@@ -1,0 +1,19 @@
+Bridge homematic:bridge:ccumkl "CCU Marklohe Bridge" @ "Marklohe" [ gatewayAddress="192.168.34.176", callbackHost="192.168.34.46", xmlCallbackPort=9125, binCallbackPort=9126 ]
+{
+	Thing HM-CC-RT-DN			LEQ0862005		"M Heizung Bad" @ "MKL Bad"
+	Thing HM-Sec-SCo        	LEQ1469500		"M Fenster Bad" @ "MKL Bad"
+	Thing HM-LC-Sw1-Pl-2		LEQ1218811		"M Insektenvernichter" @ "Marklohe"
+	Thing HM-CC-RT-DN			LEQ0856531		"M Küche" @ "Marklohe"
+	Thing HM-Sec-SD				LEQ0650479		"M RM Flur oben" @ "Marklohe"
+	Thing HM-Sec-SD				LEQ0650094		"M RM Holzwerkstatt" @ "Marklohe"
+	Thing HM-Sec-SD				LEQ0736249		"M RM Keller" @ "Marklohe"
+	Thing HM-Sec-SD				LEQ0736691		"M RM Marco Schlafzimmer" @ "Marklohe"
+	Thing HM-Sec-SD				LEQ0736662		"M RM Marco Wohnzimmer" @ "Marklohe"
+	Thing HM-Sec-SD				LEQ0650113		"M RM Metallwerkstatt" @ "Marklohe"
+	Thing HM-CC-RT-DN			NEQ1518975		"M Schlafzimmer" @ "Marklohe"
+	Thing HM-LC-Sw1-Pl-2		LEQ1220595		"M Weihnachtsbeleuchtung" @ "Marklohe"
+	Thing HM-CC-RT-DN			LEQ0861340		"M Wohnzimmer links" @ "Marklohe"
+	Thing HM-CC-RT-DN			LEQ0854027		"M Wohnzimmer rechts" @ "Marklohe"
+	Thing HM-RCV-50				BidCoS-RF		"M Zentrale" @ "Marklohe"
+	Thing GATEWAY-EXTRAS-CCU	GWE00000000		"M GATEWAY-EXTRAS" @ "Marklohe"
+}

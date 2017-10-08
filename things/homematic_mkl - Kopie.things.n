@@ -1,0 +1,57 @@
+Bridge homematic:bridge:ccumkl "CCU Marklohe Bridge" @ "Marklohe" [ gatewayAddress="192.168.34.176", callbackHost="192.168.34.46" ]
+{
+	// Funk-Heizkörperthermostat
+	Thing HM-CC-RT-DN			LEQ0862005		"Heizung Bad" @ "MKL Bad"
+
+	// Funk- Tür-/Fensterkontakt optisch
+	Thing HM-Sec-SCo        	LEQ1469500		"Fenster Bad" @ "MKL Bad"
+
+	// Gateway extras, Variablen und Scripte
+	Thing GATEWAY-EXTRAS-CCUMKL	GWE00000000		"GATEWAY-EXTRAS" @ "Marklohe"
+
+	// Funk-Schaltaktor 1-fach, Zwischenstecker
+	Thing HM-LC-Sw1-Pl-2		LEQ1218811		"Insektenvernichter" @ "Marklohe"
+
+	// Funk-Heizkörperthermostat
+	Thing HM-CC-RT-DN			LEQ0856531		"Küche" @ "Marklohe"
+
+	// Funk-Rauchmelder
+	Thing HM-Sec-SD				LEQ0650479		"RM Flur oben" @ "Marklohe"
+
+	// Funk-Rauchmelder
+	Thing HM-Sec-SD				LEQ0650094		"RM Holzwerkstatt" @ "Marklohe"
+
+	// Funk-Rauchmelder
+	Thing HM-Sec-SD				LEQ0736249		"RM Keller" @ "Marklohe"
+
+	// Funk-Rauchmelder
+	Thing HM-Sec-SD				LEQ0736691		"RM Marco Schlafzimmer" @ "Marklohe"
+
+	// Funk-Rauchmelder
+	Thing HM-Sec-SD				LEQ0736662		"RM Marco Wohnzimmer" @ "Marklohe"
+
+	// Funk-Rauchmelder
+	Thing HM-Sec-SD				LEQ0650113		"RM Metallwerkstatt" @ "Marklohe"
+
+	// Funk-Rauchmelder Team
+	Thing HM-Sec-SD-Team		T-LEQ0736691	"RM Team Marco" @ "Marklohe"
+
+	// Funk-Rauchmelder Team
+	Thing HM-Sec-SD-Team		T-LEQ0650113	"RM Team Werkstatt" @ "Marklohe"
+
+	// Funk-Heizkörperthermostat
+	Thing HM-CC-RT-DN			NEQ1518975		"Schlafzimmer" @ "Marklohe"
+
+	// Funk-Schaltaktor 1-fach, Zwischenstecker
+	Thing HM-LC-Sw1-Pl-2		LEQ1220595		"Weihnachtsbeleuchtung" @ "Marklohe"
+
+	// Funk-Heizkörperthermostat
+	Thing HM-CC-RT-DN			LEQ0861340		"Wohnzimmer links" @ "Marklohe"
+
+	// Funk-Heizkörperthermostat
+	Thing HM-CC-RT-DN			LEQ0854027		"Wohnzimmer rechts" @ "Marklohe"
+
+	// Virtuelle Fernbedienung (drahtlos)
+	Thing HM-RCV-50				BidCoS-RF		"Zentrale" @ "Marklohe"
+
+}
